@@ -17,7 +17,7 @@ import java.util.HashMap;
  * 声明一个 StringBuffer 用于盛放插入的字符，
  * 声明一个map记录字符数
  */
-public class _55_FirstAppearingOnce {
+public class _54_FirstAppearingOnce {
     //boolean[] array = new boolean[26];
     HashMap<Character, Integer> map = new HashMap<Character, Integer>();
     StringBuffer sb = new StringBuffer();
@@ -42,7 +42,7 @@ public class _55_FirstAppearingOnce {
     }
 
     public static void main(String[] args) {
-        _55_FirstAppearingOnce fa = new _55_FirstAppearingOnce();
+        _54_FirstAppearingOnce fa = new _54_FirstAppearingOnce();
         System.out.println(fa.FirstAppearingOnce());
 
         fa.Insert('g');
