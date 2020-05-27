@@ -26,6 +26,20 @@ public class _03_PrintListFromTailToHead {
         return returnValue;
     }
 
+    /**
+     * 思路：
+     * 1、使用头插法
+     * @param listNode
+     * @return
+     */
+    public ArrayList<Integer> printListFromTailToHeadII(ListNode listNode){
+        ArrayList<Integer> record = new ArrayList<Integer>();
+        while (listNode != null) {
+            record.add(0,listNode.val);
+            listNode = listNode.next;
+        }
+        return record;
+    }
     public static void main(String[] args) {
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(2);

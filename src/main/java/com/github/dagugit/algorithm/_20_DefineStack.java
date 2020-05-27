@@ -74,4 +74,32 @@ public class _20_DefineStack {
 
 
     }
+    private Stack<Integer> stack1;
+    private Stack<Integer> stack2;
+
+    public _20_DefineStack(){
+        stack1 = new Stack<>();
+        stack2 = new Stack<>();
+    }
+
+    public void push2(int x){
+        stack1.push(x);
+        if(stack2.isEmpty() || stack2.peek()>x)
+            stack2.push(x);
+        else
+            stack2.push(stack2.peek());
+    }
+
+    public void pop2(){
+        stack1.pop();
+        stack2.pop();
+    }
+
+    public int top2(){
+        return stack1.peek();
+    }
+
+    public int getMin2(){
+        return stack2.peek();
+    }
 }

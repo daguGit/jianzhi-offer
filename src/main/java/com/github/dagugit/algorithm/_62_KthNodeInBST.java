@@ -44,6 +44,45 @@ public class _62_KthNodeInBST {
         }
     }
 
+
+    private TreeNode node;
+    private int K;
+
+    /**
+     * 上述方法遍历完整颗二叉树，能够遍历K次找到第K小的数
+     * 中序遍历，K 依次递减
+     *
+     * @param pRoot
+     * @param k
+     * @return
+     */
+    public TreeNode KthNodeII(TreeNode pRoot, int k) {
+        if (k <= 0) {
+            return null;
+        }
+        this.K = k;
+        proListII(pRoot);
+        return node;
+    }
+
+
+    private void proListII(TreeNode pRoot) {
+        if (pRoot == null) {
+            return;
+        }
+        if (pRoot.left != null) {
+            proListII(pRoot.left);
+        }
+        K--;
+        if (K == 0) {
+            node = pRoot;
+        }
+        if (pRoot.right != null) {
+            proListII(pRoot.right);
+        }
+    }
+
+
     public static void main(String[] args) {
         TreeNode treeNode1 = new TreeNode(5);
         TreeNode treeNode2 = new TreeNode(3);
