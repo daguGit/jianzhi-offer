@@ -1,6 +1,6 @@
 package com.github.dagugit.think;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * 各种查找算法
@@ -13,7 +13,7 @@ public class _2020_06_01_Sort {
      * 递归、分治的思想，先取一个基点，设置收尾两个指针，尾结点小于基点的放到前面、首节点大于基点的放到后面，如此递归；
      * 1、选定一个基点 temp = array[start]
      * 2、定义两个指针 p=start、q=end
-     * 3、当p>temp时，p++，q<temp时，q--，交换
+     * 3、当p>=temp时，p++，q<=temp时，q--，交换
      * 4、将temp放到p处
      * 5、递归左右部分
      */
@@ -29,11 +29,11 @@ public class _2020_06_01_Sort {
         int q = end;
         int temp = arrays[start];
         while (p < q) {
-            while (arrays[q] > temp && q > start && p < q) {
+            while (arrays[q] >= temp && q > start && p < q) {
                 q--;
             }
             arrays[p] = arrays[q];
-            while (arrays[p] < temp && p < end && p < q) {
+            while (arrays[p] <= temp && p < end && p < q) {
                 p++;
             }
             arrays[q] = arrays[p];
@@ -143,6 +143,8 @@ public class _2020_06_01_Sort {
         }
         arr[parent] = temp;
     }
+
+
 
     //堆排序
 
